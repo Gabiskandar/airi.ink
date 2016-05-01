@@ -18,7 +18,7 @@ function add_sudo_user ()
   if [ "$1" ] ; then
     id -u $1 &>/dev/null || useradd $1
     useradd -s /bin/bash -m $1
-    usermod -aG airi-data adm sudo
+    usermod -aG airi-data, adm, sudo $1
   fi
 }
 
