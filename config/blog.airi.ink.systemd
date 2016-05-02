@@ -1,0 +1,17 @@
+[Unit]
+Description=Airi.ink Blog
+After=network.target
+
+[Service]
+Type=simple
+# Edit WorkingDirectory, User and Group as needed
+WorkingDirectory=/var/www/blog.airi.ink
+User=airi
+Group=airi
+ExecStart=/usr/bin/npm start --production
+ExecStop=/usr/bin/npm stop --production
+Restart=always
+SyslogIdentifier=blog.airi.ink
+
+[Install]
+WantedBy=multi-user.target
