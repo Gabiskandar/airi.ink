@@ -1,0 +1,3 @@
+[submodule "setup/ubuntu-tools"]
+	path = setup/ubuntu-tools
+	url = git@github.com:omnijar-studio/ubuntu-tools.git
