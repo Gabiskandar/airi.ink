@@ -50,8 +50,6 @@ build: clean
 	mkdir -p $(ASSETS_BUILD_DIR)
 	mkdir -p $(JS_BUILD_DIR)
 
-	cp -r $(CONFIG_RAW_DIR)/development.json $(JS_BUILD_DIR)/config.json
-
 	cp -r $(TEMPLATES_RAW_DIR) $(TEMPLATES_BUILD_DIR)
 	cp -r $(CONTENT_RAW_DIR) $(CONTENT_BUILD_DIR)
 	cp -r $(IMAGES_RAW_DIR) $(IMAGES_BUILD_DIR)
@@ -63,8 +61,6 @@ build: clean
 	done
 
 	npm run build
-
-	mv $(JS_BUILD_DIR)/sw.js $(CONTENT_BUILD_DIR)/sw.js
 
 build-container: clean-container build
 
