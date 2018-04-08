@@ -3,3 +3,34 @@
  * Project: Aether
  * Airi Ink
  */
+
+:root {
+    --primary-highlight-color: rgba(255,80,81,1);
+    --inverted-background-color: rgba(15,13,32,1);
+    --inverted-text-color: rgba(255,255,255,1);
+}
+
+body {
+    font-family: "infini", sans-serif;
+    font-feature-settings: "liga" on;
+    font-variant-ligatures: common-ligatures;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: grayscale;
+
+    /* w3C */
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1, "dlig" 1;
+
+    /* prefixe */
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga" 1, "dlig" 1;
+    -o-font-feature-settings: "liga" 1, "dlig" 1;
+}
