@@ -3,3 +3,9 @@
  * Project: Aether
  * Airi Ink
  */
+
+header {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}

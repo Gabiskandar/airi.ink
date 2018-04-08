@@ -3,3 +3,9 @@
  * Project: Aether
  * Airi Ink
  */
+
+body > nav {
+    display: inline;
+    position: fixed;
+    z-index: 1;
+}
