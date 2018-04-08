@@ -1,11 +1,124 @@
-image: alpine:latest
+variables:
+  DOCKER_DRIVER: overlay
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+  CONTAINER_IMAGE: $CI_REGISTRY_IMAGE
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
 
-pages:
-  stage: deploy
-  script:
-  - echo 'Nothing to do...'
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  image: node:9.3.0
+  stage: test
+  script: echo "Running tests"
+
+build:
+  image: node:9.3.0
+  stage: build
+  script: 
+    - make prepare
+    - make build
   artifacts:
     paths:
-    - public
+      - .build/
+    expire_in: 1 week
+
+deploy:review:
+  stage: deploy
+  script:
+    - echo "Deploy a review app"
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: https://$CI_ENVIRONMENT_SLUG.airi.ink
+  only:
+    - branches
+  except:
+    - master
+
+deploy:staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: https://staging.airi.ink
   only:
   - master
+  artifacts:
+    paths:
+    - .build
+  only:
+  - master
+
+deploy:release:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://airi.ink
+  artifacts:
+    paths:
+    - .build
+  when: manual
+  only:
+  - release
+
+build:container:
+  image: docker:latest
+  stage: deploy
+  services:
+    - docker:dind
+  before_script:
+    - echo -n $CI_BUILD_TOKEN | docker login -u gitlab-ci-token --password-stdin registry.gitlab.com
+  script:
+    - docker build --pull -t $CONTAINER_TEST_IMAGE -f Dockerfile .
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
+    - docker push $CONTAINER_IMAGE:latest
+  when: manual
+  tags:
+    - docker
+  only: 
+    - release
+  dependencies:
+    - build
+
+tag:container:
+  image: docker:latest
+  stage: deploy
+  services:
+    - docker:dind
+  before_script:
+    - echo -n $CI_BUILD_TOKEN | docker login -u gitlab-ci-token --password-stdin registry.gitlab.com
+  script:
+    - docker build --pull -t $CONTAINER_TEST_IMAGE -f Dockerfile .
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_REF_NAME
+    - docker push $CONTAINER_IMAGE:$CI_BUILD_REF_NAME
+  when: on_success
+  tags:
+    - docker
+  only: 
+    - tags
+  dependencies:
+    - build
+
+nightly:container:
+  image: docker:latest
+  stage: deploy
+  services:
+    - docker:dind
+  before_script:
+    - echo -n $CI_BUILD_TOKEN | docker login -u gitlab-ci-token --password-stdin registry.gitlab.com
+  script:
+    - docker build --pull -t $CONTAINER_TEST_IMAGE -f Dockerfile .
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:nightly
+    - docker push $CONTAINER_IMAGE:nightly
+  when: on_success
+  tags:
+    - docker
+  only:
+    - schedules
+  dependencies:
+    - build
