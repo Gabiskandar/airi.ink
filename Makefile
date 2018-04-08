@@ -1,7 +1,7 @@
 # Build Output Directories
 CONTAINER_URL = gabiskandar/aether:0.2
 
-BUILD_DIR = dist
+BUILD_DIR = .build
 SRC_BUILD_DIR = /lib
 ASSETS_DIR = assets
 TEMPLATES_DIR = stencils
@@ -34,8 +34,8 @@ prepare:
 clean:
 
 	# TypeScript
-	if	[ -d "dist" ]; then \
-		rm -r dist ; \
+	if	[ -d ".build" ]; then \
+		rm -r .build ; \
 	fi
 
 clean-container:
@@ -57,7 +57,7 @@ build: clean
 
 	for file in $(JS_RAW_DIR)/*.js ; do \
 		input=$${file} ; \
-		output=dist/$${file%.js}.js ; \
+		output=.build/$${file%.js}.js ; \
 	done
 
 	npm run build
