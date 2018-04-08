@@ -57,11 +57,9 @@
                 {% include "partials/header.html" %}
             {% endblock %}
         {% endif %}
-        {% if partials.nav %}
-            {% block nav %}
-                {% include "partials/nav.html" %}
-            {% endblock %}
-        {% endif %}
+        {% block nav %}
+            {% include "partials/nav.html" %}
+        {% endblock %}
         {% block content %}{% endblock %}
         {% if partials.footer %}
             {% block footer %}
