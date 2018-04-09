@@ -13,11 +13,18 @@ main {
     z-index: 1;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
 section.invert {
     background-color: var(--inverted-background-color);
     color: var(--inverted-text-color);
     min-height: 100vh;
-    padding: 3em 3em 3em 4em;
+    padding: 3em 3em 3em 7em;
 }
 
 .ligatures-on {
