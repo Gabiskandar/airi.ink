@@ -14,5 +14,6 @@ main {
 section.invert {
     background-color: var(--inverted-background-color);
     color: var(--inverted-text-color);
-    height: 100vh;
+    min-height: 100vh;
+    padding: 3em 3em 3em 4em;
 }
