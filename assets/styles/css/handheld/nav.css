@@ -6,6 +6,27 @@
 
 body > nav {
     display: inline;
+    height: 3rem;
     position: fixed;
+    width: 100vh;
     z-index: 1;
+}
+
+nav > ul {
+    color: var(--primary-highlight-color);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    height: 3rem;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    list-style: none;
+}
+
+/* rotate nav */
+
+nav > ul {
+    transform: rotate(-90deg) translate(-0%, calc(-100vh - 1rem));
+    transform-origin: top right;
+    width: 100vh;
 }
