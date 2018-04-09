@@ -3,3 +3,19 @@
  * Project: Aether
  * Airi Ink
  */
+
+footer {
+    background-color: var(--inverted-text-color);
+    height: 100vh;
+    position: absolute;
+    top: 300vh;
+    width: 100%;
+}
+
+footer details {
+    display: block;
+    margin-top: 1rem;
+    position: sticky;
+    top: 50vh;
+    transform: translate(0%, -50%);
+}

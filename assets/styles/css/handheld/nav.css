@@ -9,7 +9,7 @@ body > nav {
     height: 3rem;
     position: fixed;
     width: 100vh;
-    z-index: 1;
+    z-index: 2;
 }
 
 nav > ul {
@@ -17,6 +17,7 @@ nav > ul {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
+    font-size: 1.2em;
     height: 3rem;
     justify-content: space-around;
     -webkit-justify-content: space-around;

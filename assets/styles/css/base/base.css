@@ -15,7 +15,8 @@ html {
 }
 
 body {
-    font-family: "infini", sans-serif;
+    background-color: var(--inverted-text-color);
+    font-family: "infini", "Trebuchet MS", Helvetica, sans-serif;
     font-feature-settings: "liga" on;
     font-style: normal;
     font-variant-ligatures: common-ligatures;

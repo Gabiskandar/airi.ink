@@ -5,6 +5,7 @@
  */
 
 header {
+    background-color: var(--inverted-text-color);
     height: 100vh;
     position: fixed;
     width: 100%;
