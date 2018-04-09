@@ -6,16 +6,18 @@
 
 footer {
     background-color: var(--inverted-text-color);
+    box-sizing: border-box;
     height: 100vh;
+    padding: 10em;
     position: absolute;
     top: 300vh;
     width: 100%;
 }
 
 footer details {
+    cursor: pointer;
     display: block;
     margin-top: 1rem;
     position: sticky;
-    top: 50vh;
-    transform: translate(0%, -50%);
+    top: calc(50vh - 1em);
 }

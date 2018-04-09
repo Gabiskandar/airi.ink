@@ -5,8 +5,19 @@
  */
 
 header {
+    align-items: center;
+    -webkit-align-items: center;
     background-color: var(--inverted-text-color);
+    display: flex;
+    display: -webkit-flex;
     height: 100vh;
+    justify-content: center;
+    -webkit-justify-content: center;
     position: fixed;
     width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    transform: translate(0, -50%);
 }

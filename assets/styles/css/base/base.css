@@ -130,7 +130,7 @@ body {
 blockquote {
     color: var(--primary-highlight-color);
     font-size: 6vh;
-    font-weight: 900;
+    font-weight: 400;
     letter-spacing: 2px;
     margin: 2em 2em 2em 0;
     text-transform: uppercase;

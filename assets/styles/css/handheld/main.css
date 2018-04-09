@@ -25,9 +25,15 @@ section.invert {
     color: var(--inverted-text-color);
     min-height: 100vh;
     padding: 3em 3em 3em 7em;
+    position: sticky;
+    top: 0;
 }
 
 .ligatures-on {
     font-weight: 400;
     text-transform: uppercase;
+}
+
+section p {
+    text-align: right;
 }
