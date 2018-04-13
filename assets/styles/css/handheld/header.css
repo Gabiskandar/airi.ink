@@ -7,14 +7,46 @@
 header {
     align-items: center;
     -webkit-align-items: center;
-    background-color: var(--inverted-text-color);
+    background: radial-gradient(rgba(214,212,212,1) 0%, rgba(0,0,0,0.7) 25%, rgba(0,0,0,1) 55%);
+    background-color: black;
     display: flex;
     display: -webkit-flex;
-    height: 100vh;
+    flex-direction: column;
+    height: auto;
     justify-content: center;
     -webkit-justify-content: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
     position: fixed;
     width: 100%;
+}
+
+header div {
+    height: 85vh;
+    margin-bottom: auto;
+    margin-top: 0;
+    min-height: 300px;
+    position: relative;
+    top: 0;
+}
+
+header nav {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    display: -webkit-flex;
+    height: 15vh;
+    justify-content: space-around;
+    max-width: 100%;
+    min-height: 100px;
+    position: relative;
+    width: 100%;
+}
+
+header nav svg {
+    flex: 1 1 2em;
+    max-width: 2em;
 }
 
 header h1 {
