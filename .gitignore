@@ -1,3 +1,9 @@
+# Raster/binary images
+assets/images/rasters/*
+
+# Font files
+assets/styles/fonts/*
+
 # Logs
 logs
 *.log

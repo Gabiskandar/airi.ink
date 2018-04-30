@@ -1,0 +1,10 @@
+/**
+ * screen.css
+ * Project: Aether
+ * Airi Ink
+ */
+
+ @import url("./screen/header.css");
+ @import url("./screen/main.css");
+ @import url("./screen/nav.css");
+ @import url("./screen/footer.css");

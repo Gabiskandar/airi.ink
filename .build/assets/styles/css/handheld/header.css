@@ -22,15 +22,10 @@ header {
 }
 
 header div {
-    display: flex;
-    display: -webkit-flex;
     height: 80vh;
-    justify-content: center;
-    -webkit-justify-content: center;
     min-height: 300px;
     position: relative;
     top: 0;
-    width: 100%;
 }
 
 header nav {
@@ -72,17 +67,4 @@ header h1 {
     height: 100%;
     width: 100%;
     z-index: 0;
-}
-
-picture > * {
-    height: 100%;
-    width: 100%;
-}
-
-#fold-bottom {
-    height: auto;
-    min-width: 110%;
-    align-self: flex-end;
-    margin-top: auto;
-    margin-bottom: 0;
 }
