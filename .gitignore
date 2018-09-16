@@ -1,8 +1,18 @@
-# Raster/binary images
-assets/images/rasters/*
+# Raster/binary images 
+*.png
+*.tiff
+*.jpg
+*.jpeg
+*.gif
+
+# Build
+.build/*
+.build/
+.build
 
 # Font files
 assets/styles/fonts/*
+*.woff*
 
 # Logs
 logs

@@ -7,6 +7,7 @@
  @import url("./base/normalize.css");
  @import url("./base/base.css");
  @import url("./base/fonts.css");
+ @import url("./base/svg-style.css");
  @import url("./handheld/header.css");
  @import url("./handheld/main.css");
  @import url("./handheld/nav.css");

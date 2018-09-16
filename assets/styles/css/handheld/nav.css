@@ -4,9 +4,8 @@
  * Airi Ink
  */
 
-body > nav {
-    display: inline;
-    height: 3rem;
+body > nav.sidebar {
+    background-color: var();
     left: 0;
     position: fixed;
     top: 0;
@@ -14,23 +13,32 @@ body > nav {
     z-index: 2;
 }
 
-nav > ul {
-    color: var(--primary-highlight-color);
+nav.sidebar > ul {
+    background-color: rgba(16,13,32,1);
+    background-color: var(--key-color);
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
     font-size: 1.2em;
-    height: 3rem;
-    justify-content: space-around;
-    -webkit-justify-content: space-around;
+    height: 4rem;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
     list-style: none;
+    margin: 0;
+    padding: 0.5em 2em;
     text-transform: lowercase;
+}
+
+nav.sidebar li {
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
 }
 
 /* rotate nav */
 
-nav > ul {
-    transform: rotate(-90deg) translate(-0%, calc(-100vh - 1rem));
+nav.sidebar {
+    transform: rotate(-90deg) translate(-0%, -100vh);
     transform-origin: top right;
     width: 100vh;
 }

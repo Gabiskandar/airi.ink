@@ -1,0 +1,63 @@
+[class^="airi-"], [class*=" airi-"] {
+  display: inline-block;
+  width: auto;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.airi-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.airi-top-crease,
+.airi-bottom-crease  {
+  height: auto;
+  width: 100vw;
+}
+
+.airi-top-crease {
+  border-bottom: 4px solid currentColor;
+  fill: url(#gradient-vertical-down);
+  margin-bottom: -4px;
+}
+
+.airi-bottom-crease {
+  border-top: 4px solid currentColor;
+  fill: url(#gradient-vertical-up);
+  margin-top: -4px;
+}
+
+.svg-vgradientdown {
+  fill: url(#gradient-vertical-down);
+}
+
+.svg-vgradientup {
+  fill: url(#gradient-vertical-up);
+}
+
+.airi-hand {
+  bottom: 7.3vw;
+  height: auto;
+  position: absolute;
+  right: 0;
+  width: 20.8vw;
+}
+
+.airi-spinner {
+  width: 3em;
+  transform: rotate(90deg);
+}
+
+#gradient-vertical-up {
+  --color-stop-1: rgba(16,13,32,1);
+  --color-stop-2: rgba(14,12,22,1);
+  --color-stop-3: rgba(10,10,12,1);
+}
+
+#gradient-vertical-down {
+  --color-stop-1: rgba(10,10,12,1);
+  --color-stop-2: rgba(14,12,22,1);
+  --color-stop-3: rgba(16,13,32,1);
+}

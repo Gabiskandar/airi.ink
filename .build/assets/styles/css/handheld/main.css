@@ -5,26 +5,71 @@
  */
 
 main {
-    background-color: var(--inverted-background-color);
     height: auto;
+    position: relative;
     width: 100%;
     z-index: 1;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-justify-content: center;
+main > * {
+    flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+    height: 150vh;
 }
 
-section.invert {
-    background-color: var(--inverted-background-color);
-    color: var(--inverted-text-color);
+section {
     min-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+section > div {
+    height: calc(100vh - 6em);
     padding: 3em 3em 3em 7em;
     position: sticky;
     top: 0;
+    z-index: 1;
+}
+
+section.center div {
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;   
+}
+
+section.pull {
+    background-color: transparent;
+}
+
+section.pull,
+section.drop {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: unset;
+    position: relative;
+}
+
+section.drop {
+    background-color: white;
+}
+
+section.light {
+    background-color: rgba(255,255,255,1);
+    background-color: var(--neutral-color-light96);
+    color: rgba(16,13,32,1);
+    color: var(--neutral-brand-color);
+}
+
+section.invert {
+    background-color: rgba(12,10,10,1);
+    background-color: var(--neutral-brand-color);
+    color: rgba(255,255,255,1);
+    color: var(--light-color);
 }
 
 .ligatures-on {
