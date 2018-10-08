@@ -55,7 +55,7 @@ section.drop {
 }
 
 section.drop {
-    background-color: white;
+    background-image: var(--brand-gradient);
 }
 
 section.light {
@@ -66,8 +66,7 @@ section.light {
 }
 
 section.invert {
-    background-color: rgba(12,10,10,1);
-    background-color: var(--neutral-brand-color);
+    background-color: black;
     color: rgba(255,255,255,1);
     color: var(--light-color);
 }

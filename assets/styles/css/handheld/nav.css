@@ -5,7 +5,6 @@
  */
 
 body > nav.sidebar {
-    background-color: var();
     left: 0;
     position: fixed;
     top: 0;
@@ -14,8 +13,6 @@ body > nav.sidebar {
 }
 
 nav.sidebar > ul {
-    background-color: rgba(16,13,32,1);
-    background-color: var(--key-color);
     display: flex;
     display: -webkit-flex;
     flex-direction: row;

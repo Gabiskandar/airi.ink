@@ -54,10 +54,16 @@ Single-colored icons can be modified like so:
   --color-stop-1: rgba(16,13,32,1);
   --color-stop-2: rgba(14,12,22,1);
   --color-stop-3: rgba(10,10,12,1);
+  --color-stop-1: rgba(0,0,0,1);
+  --color-stop-2: rgba(0,0,0,1);
+  --color-stop-3: rgba(0,0,0,1);
 }
 
 #gradient-vertical-down {
   --color-stop-1: rgba(10,10,12,1);
   --color-stop-2: rgba(14,12,22,1);
   --color-stop-3: rgba(16,13,32,1);
+  --color-stop-1: rgba(0,0,0,1);
+  --color-stop-2: rgba(0,0,0,1);
+  --color-stop-3: rgba(0,0,0,1);
 }
