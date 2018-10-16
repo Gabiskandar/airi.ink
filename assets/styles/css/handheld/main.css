@@ -13,15 +13,7 @@ main {
 
 main > * {
     flex: 0 0 auto;
-    position: sticky;
-    top: 0;
     height: 150vh;
-}
-
-section {
-    min-height: 100vh;
-    position: sticky;
-    top: 0;
 }
 
 section > div {
