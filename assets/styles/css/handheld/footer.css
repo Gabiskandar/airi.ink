@@ -8,8 +8,8 @@ footer {
     background-color: var(--cool-color-light60);
     background-image: var(--brand-gradient);
     box-sizing: border-box;
-    height: 100vh;
-    padding: 10em;
+    min-height: 10vh;
+    padding: 2em;
     position: absolute;
     width: 100%;
     z-index: 1;

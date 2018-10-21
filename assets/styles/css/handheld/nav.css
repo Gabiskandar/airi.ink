@@ -17,7 +17,6 @@ nav.sidebar > ul {
     display: -webkit-flex;
     flex-direction: row;
     font-size: 1.2em;
-    height: 4rem;
     justify-content: space-between;
     -webkit-justify-content: space-between;
     list-style: none;
