@@ -31,10 +31,69 @@ nav.sidebar li {
     display: flex;
 }
 
+nav.sidebar p {
+    margin: 0;
+}
+
 /* rotate nav */
 
 nav.sidebar {
     transform: rotate(-90deg) translate(-0%, -100vh);
     transform-origin: top right;
     width: 100vh;
+}
+
+.highlight-detail > nav {
+    color: var(--light-color);
+    font-size: 1.2rem;
+    left: 5rem;
+    position: fixed;
+    top: 4rem;
+}
+
+a {
+    color: var(--light-color);
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
+
+a::before {
+    background-color: var(--cool-brand-color);
+    bottom: -0.2em;
+    box-sizing: border-box;
+    content: "";
+    height: 0%;
+    left: -0.2em;
+    padding: 0 0.2em;
+    position: absolute;
+    transition: 0.2s;
+    width: 100%;
+    z-index: -1;
+}
+
+a:hover::before {
+    height: 50%;
+    transition: 0.2s;
+}
+
+a:active::before,
+a:focus::before,
+a:visited::before {
+    height: 100%;
+    transform: rotate(-25deg);
+    transition: 0.2s;
+}
+
+a:after {
+    content: "※";
+    font-size: 80%;
+    opacity: 0.7;
+    padding-left: 0.1em;
+    position: inherit;
+    top: -0.5rem;
+}
+
+.highlight-detail > nav p {
+    margin: 0;
 }

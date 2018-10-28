@@ -1,0 +1,5 @@
+@media (min-width: 767px) {
+    .highlight-detail > nav {
+        font-size: 1.7rem;
+    }
+}
