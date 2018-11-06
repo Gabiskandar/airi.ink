@@ -45,7 +45,9 @@ nav.sidebar {
 
 .highlight-detail > nav {
     color: var(--light-color);
-    font-size: 1.2rem;
+    filter: drop-shadow(1px 1px 3px black);
+    font-size: 1.4rem;
+    font-style: italic;
     left: 5rem;
     position: fixed;
     top: 4rem;
@@ -77,18 +79,39 @@ a:hover::before {
     transition: 0.2s;
 }
 
-a:active::before,
-a:focus::before,
-a:visited::before {
+
+nav a:active::before,
+nav a:focus::before {
     height: 100%;
-    transform: rotate(-25deg);
+    transform: rotate(-15deg);
     transition: 0.2s;
 }
 
+nav a:visited::before {
+    height: 100%;
+    transform: rotate(-15deg);
+}
+
+a:active::before,
+a:focus::before {
+    height: 100%;
+    transform: rotate(-5deg);
+    transition: 0.2s;
+}
+
+a:visited::after {
+    color: var(--cool-color-light70);
+}
+
+a:visited::before {
+    height: 100%;
+    transform: rotate(-5deg);
+}
+
 a:after {
+    color: var(--cool-brand-color);
     content: "※";
     font-size: 80%;
-    opacity: 0.7;
     padding-left: 0.1em;
     position: inherit;
     top: -0.5rem;

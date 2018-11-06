@@ -49,6 +49,7 @@ section.center div {
 }
 
 .highlight-detail .drop {
+    height: auto;
     margin-bottom: -7.5vw;
     min-height: unset;
     position: absolute;
@@ -169,13 +170,13 @@ section.love-highlight {
 .highlight-detail > div:nth-of-type(4) > div {
     align-self: start;
     grid-column: 3 / span 3;
-    grid-row-start: 3;
+    grid-row-start: 4;
 }
 
 .highlight-detail > div:nth-of-type(4) > aside {
     align-self: end;
     grid-column: 5 / span 2;
-    grid-row-end: 3;
+    grid-row-end: 4;
 }
 
 .highlight-detail > div:nth-of-type(5) > div,
