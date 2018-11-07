@@ -20,6 +20,7 @@
     --neutral-color-light60: rgba(40,35,67,1);
     --neutral-color-light80: rgba(196,193,215,1);
     --neutral-color-light96: rgba(243,243,247,1);
+    --grid-line: rgba(243,243,247,0.1);
     --brand-gradient: linear-gradient(to right, var(--cool-color-light60), var(--warm-color-light80));
 }
 
@@ -156,6 +157,54 @@ body {
 
     small, .font_small {font-size: 0.618em;}
 
+}
+
+a {
+    background-image: linear-gradient(transparent 0%,var(--cool-brand-color) 0%);
+    background-position-y: 1em;
+    background-repeat: no-repeat;
+    color: var(--light-color);
+    padding-left: 0.2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    padding-right: 0.1em;
+    position: relative;
+    text-decoration: none;
+    transition: background-position 0.2s;
+    z-index: 1;
+}
+
+a:hover,
+a:focus {
+    background-position-y: 0;
+    transition: background-position 0.2s;
+}
+
+a:active {
+    background-position-y: -0.2em;
+    transition: background-position 0.2s;
+}
+
+a:visited {
+    background-position-y: 0.2em;
+    transition: background-position 0.2s;
+}
+
+a:after {
+    content: "※";
+    padding-left: 0.1em;
+    position: inherit;
+    top: -0.5rem;
+}
+
+a:hover::after {
+    color: inherit;
+    transition: color 0.2s;
+}
+
+a:focus::after {
+    color: inherit;
+    transition: font-size 0.2s;
 }
 
 blockquote {

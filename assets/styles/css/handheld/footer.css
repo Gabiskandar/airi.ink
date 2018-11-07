@@ -20,5 +20,6 @@ footer details {
     display: block;
     margin-top: 1rem;
     position: sticky;
+    position: -webkit-sticky;
     top: calc(50vh - 1em);
 }

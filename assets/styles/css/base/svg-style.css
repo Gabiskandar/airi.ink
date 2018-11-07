@@ -23,12 +23,10 @@ Single-colored icons can be modified like so:
   position: absolute;
 }
 
-.airi-hand {
-  bottom: 7.3vw;
+#airi-hand-pull {
   height: auto;
-  position: absolute;
   right: 0;
-  width: 20.8vw;
+  width: 100%;
 }
 
 .airi-spinner {
