@@ -142,7 +142,6 @@ div.gridlines {
     align-content: center;
     -webkit-align-content: center;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     -webkit-justify-content: center;
     padding: 2em;
@@ -171,6 +170,10 @@ div.gridlines {
 #about-airi strong {
     font-family: serif;
     font-size: 1.777em;
+}
+
+.highlight-detail div aside {
+    margin-top: 2em;
 }
 
 aside::before {
@@ -234,6 +237,7 @@ aside::before {
         grid-template-columns: 4em 1fr 1fr 1fr 1fr 1fr 1fr 4em;
         grid-template-rows: 4em 1fr 1fr 1fr 1fr 4em;
         grid-gap: 1em;
+        height: 100vh;
         justify-content: unset;
         -webkit-justify-content: unset;
         padding: 0;
