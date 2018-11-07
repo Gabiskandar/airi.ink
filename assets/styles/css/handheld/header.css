@@ -8,17 +8,14 @@ body > header {
     display: none;
 }
 
-main > header {
-    min-height: 200vh;
-    position: sticky;
-    position: -webkit-sticky;
-    top: -100vh;
-    width: 100vw;
-}
-
 main > header > section {
     background-color: var(--background-color);
     min-height: 100vh;
+}
+
+header .center {
+    height: 70vh;
+    min-height: unset;
 }
 
 header .center h1,
@@ -39,4 +36,19 @@ header h1 {
     color: rgba(0,0,0,0.1);
     font-size: 10vw;
     text-align: center;
+}
+
+@media (min-width: 600px) {
+    main > header {
+        min-height: 200vh;
+        position: sticky;
+        position: -webkit-sticky;
+        top: -100vh;
+        width: 100vw;
+    }
+
+    header .center {
+        height: 100vh;
+        min-height: 100vh;
+    }
 }

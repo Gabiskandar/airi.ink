@@ -4,6 +4,12 @@
  * Airi Ink
  */
 
+:root {
+    --div-detail-span: span 6;
+    --aside-span: span 6;
+}
+
+
 main {
     height: auto;
     position: relative;
@@ -44,8 +50,12 @@ section.center div {
     background-color: transparent;
     display: flex;
     flex-direction: column;
+    height: auto;
+    margin-top: 0;
+    min-height: auto;
     padding: 0;
     position: relative;
+    z-index: 10;
 }
 
 .highlight-detail .drop {
@@ -58,11 +68,29 @@ section.center div {
 
 .drop::before {
     content: "";
+    height: 8em;
+    width: 100%;
+    background-image: linear-gradient(transparent, black 40%);
+    position: absolute;
+    top: -8em;
+}
+
+.pull::after {
+    bottom: -4em;
+    content: "";
     height: 4em;
     width: 100%;
-    background-image: linear-gradient(transparent, black);
+    background-image: linear-gradient(black 80%, transparent);
     position: absolute;
-    top: -4em;
+}
+
+.pull svg,
+.drop svg {
+    filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.4));
+}
+
+.pull + div {
+    padding-top: 4em;
 }
 
 .light {
@@ -86,6 +114,7 @@ section.love-highlight {
     background-color: var(--cool-color-light60);
     background-image: var(--brand-gradient);
     height: 100vh;
+    margin-top: -2em;
 }
 
 .love-highlight > div {
@@ -93,7 +122,7 @@ section.love-highlight {
     display: -webkit-flex;
     justify-content: center;
     -webkit-justify-content: center;
-    padding: 2em;
+    padding: 0;
     position: sticky;
     position: -webkit-sticky;
     top: 45%;
@@ -108,11 +137,15 @@ section.love-highlight {
 #about-airi > div,
 .highlight-detail > div,
 div.gridlines {
-    display: grid;
-    grid-template-columns: 4em 1fr 1fr 1fr 1fr 1fr 1fr 4em;
-    grid-template-rows: 4em 1fr 1fr 1fr 1fr 4em;
-    grid-gap: 1em;
+    display: flex;
+    display: webkit-flex;
+    align-content: center;
+    -webkit-align-content: center;
+    flex-direction: column;
     height: 100vh;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding: 2em;
     width: 100vw;
 }
 
@@ -129,22 +162,6 @@ div.gridlines {
     grid-gap: 1em;
     justify-self: flex-end;
     margin: 0;
-    text-align: end;
-    transform: scale(-1);
-    writing-mode: vertical-lr;
-}
-
-#about-airi > div > div {
-    grid-row-start: 3;
-    grid-row-end: 5;
-    grid-column-start: 3;
-    grid-column-end: 7;
-}
-
-#about-airi > div > aside {
-    grid-row-start: 5;
-    grid-column-start: 5;
-    grid-column-end: 7;
 }
 
 #about-airi h3 {
@@ -154,49 +171,6 @@ div.gridlines {
 #about-airi strong {
     font-family: serif;
     font-size: 1.777em;
-}
-
-.highlight-detail > div:nth-of-type(2) > div {
-    align-self: end;
-    grid-column: 4 / span 3;
-    grid-row-end: 4;
-}
-
-.highlight-detail > div:nth-of-type(2) > aside {
-    align-self: start;
-    grid-column: 2 / span 2;
-    grid-row-start: 4;
-}
-
-.highlight-detail > div:nth-of-type(3) > div {
-    align-self: end;
-    grid-column: 3 / span 3;
-    grid-row-end: 4;
-}
-
-.highlight-detail > div:nth-of-type(3) > aside {
-    align-self: start;
-    grid-column: 3 / span 2;
-    grid-row-start: 4;
-}
-
-.highlight-detail > div:nth-of-type(4) > div {
-    align-self: start;
-    grid-column: 3 / span 3;
-    grid-row-start: 4;
-}
-
-.highlight-detail > div:nth-of-type(4) > aside {
-    align-self: end;
-    grid-column: 5 / span 2;
-    grid-row-end: 4;
-}
-
-.highlight-detail > div:nth-of-type(5) > div,
-.highlight-detail > div:nth-of-type(6) > div {
-    align-self: center;
-    grid-column: 4 / span 3;
-    grid-row: 3 /span 2;
 }
 
 aside::before {
@@ -222,10 +196,115 @@ aside::before {
     background-size: calc(100vw - 10em);
 }
 
+#cropped-airi-hand-pull {
+    display: block;
+    z-index: 10;
+}
+
+#airi-hand-pull {
+    display: none;
+}
+
 @media (min-width: 480px) { 
     
     #about-airi strong {
         font-size: 1.999em;
+    }
+}
+
+@media (min-width: 600px) { 
+
+    :root {
+        --div-detail-span: span 3;
+        --aside-span: span 2;
+    }
+
+    #about-airi > div h3 {
+        text-align: end;
+        transform: scale(-1);
+        writing-mode: vertical-lr;
+    }
+
+    #about-airi > div,
+    .highlight-detail > div,
+    div.gridlines {
+        align-content: unset;
+        -webkit-align-content: unset;
+        display: grid;
+        grid-template-columns: 4em 1fr 1fr 1fr 1fr 1fr 1fr 4em;
+        grid-template-rows: 4em 1fr 1fr 1fr 1fr 4em;
+        grid-gap: 1em;
+        justify-content: unset;
+        -webkit-justify-content: unset;
+        padding: 0;
+    }
+
+    #about-airi > div > div {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 3;
+        grid-column-end: 7;
+    }
+    
+    #about-airi > div > aside {
+        grid-row-start: 5;
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+
+    .highlight-detail .pull {
+        margin-top: 100vh;
+    }
+
+    .highlight-detail > div:nth-of-type(2) > div {
+        align-self: end;
+        grid-column: 4 / var(--div-detail-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(2) > aside {
+        align-self: start;
+        grid-column: 2 / var(--aside-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(3) > div {
+        align-self: end;
+        grid-column: 3 / var(--div-detail-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(3) > aside {
+        align-self: start;
+        grid-column: 3 / var(--aside-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(4) > div {
+        align-self: start;
+        grid-column: 3 / var(--div-detail-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(4) > aside {
+        align-self: end;
+        grid-column: 5 / var(--aside-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(5) > div,
+    .highlight-detail > div:nth-of-type(6) > div {
+        align-self: center;
+        grid-column: 4 / var(--div-detail-span);
+        grid-row: 3 / var(--aside-span);
+    }
+
+    #cropped-airi-hand-pull {
+        display: none;
+    }
+
+    #airi-hand-pull {
+        display: block;
     }
 }
 

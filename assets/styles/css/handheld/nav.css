@@ -4,53 +4,16 @@
  * Airi Ink
  */
 
-body > nav.sidebar {
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vh;
-    z-index: 2;
-}
-
-nav.sidebar > ul {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-    font-size: 1.2em;
-    justify-content: space-between;
-    -webkit-justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    padding: 0.5em 2em;
-    text-transform: lowercase;
-}
-
-nav.sidebar li {
-    align-items: center;
-    -webkit-align-items: center;
-    display: flex;
-}
-
-nav.sidebar p {
-    margin: 0;
-}
-
-/* rotate nav */
-
-nav.sidebar {
-    transform: rotate(-90deg) translate(-0%, -100vh);
-    transform-origin: top right;
-    width: 100vh;
-}
-
-.highlight-detail > nav {
+nav[id*="screen-home-nav"] {
     color: var(--light-color);
     filter: drop-shadow(1px 1px 3px black);
     font-size: 1.4rem;
     font-style: italic;
-    left: 5rem;
+    left: 0;
+    margin: 1em;
+    width: 8.5em;
     position: fixed;
-    top: 4rem;
+    top: 0;
 }
 
 nav a,
@@ -112,6 +75,80 @@ a:hover:visited::after {
     transition: color 0.2s;
 }
 
-.highlight-detail > nav p {
+nav[id*="screen-home-nav"] p {
     margin: 0;
+}
+
+nav.sidebar {
+    display: none;
+}
+
+nav#small-screen-home-nav {
+    position: relative;
+}
+
+#small-screen-home-nav p {
+    line-height: 1.7;
+}
+
+#large-screen-home-nav {
+    display: none;
+}
+
+@media (min-width: 600px) { 
+
+    #small-screen-home-nav {
+        display: none;
+    }
+
+    #large-screen-home-nav {
+        display: block;
+    }
+
+    body > nav.sidebar {
+        display: block;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100vh;
+        z-index: 2;
+    }
+
+    nav.sidebar > ul {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        font-size: 1.2em;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0.5em 2em;
+        text-transform: lowercase;
+    }
+
+    nav.sidebar li {
+        align-items: center;
+        -webkit-align-items: center;
+        display: flex;
+    }
+
+    nav.sidebar p {
+        margin: 0;
+    }
+
+    /* rotate nav */
+
+    nav.sidebar {
+        transform: rotate(-90deg) translate(-0%, -100vh);
+        transform-origin: top right;
+        width: 100vh;
+    }
+
+    nav[id*="screen-home-nav"] {
+        left: 5rem;
+        margin: 0;
+        top: 2rem;
+        width: unset;
+    }
 }
