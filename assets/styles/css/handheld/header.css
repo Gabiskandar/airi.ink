@@ -44,8 +44,8 @@ header .center svg#airi-header-logo {
 }
 
 #airi-header-logo #text-script #airi-script {
-    stroke-dasharray: 6000px;
-    stroke-dashoffset: 6000px;
+    stroke-dasharray: 4000px;
+    stroke-dashoffset: 4000px;
 }
 
 @keyframes drip {
@@ -68,41 +68,82 @@ header h1 {
 
 @keyframes flash {
     0% { 
+        -webkit-filter: drop-shadow(1px 1px 4px white);
         filter: drop-shadow(1px 1px 4px white);
     }
     4% { 
+        -webkit-filter: drop-shadow(0px 1px 3px white);
         filter: drop-shadow(0px 1px 3px white);
     }
     6% { 
+        -webkit-filter: drop-shadow(0px 0px 0px white);
         filter: drop-shadow(0px 0px 0px white);
     }
     12% { 
+        -webkit-filter: drop-shadow(0px 0px 10px white);
         filter: drop-shadow(0px 0px 10px white);
     }
     13% { 
+        -webkit-filter: drop-shadow(0px 0px 1px white);
         filter: drop-shadow(0px 0px 1px white);
     }
     15% { 
+        -webkit-filter: drop-shadow(0px 1px 2px white);
         filter: drop-shadow(0px 1px 2px white);
     }
     20% { 
+        -webkit-filter: drop-shadow(0px 1px 6px white);
         filter: drop-shadow(0px 1px 6px white);
     }
     56% { 
+        -webkit-filter: drop-shadow(0px 1px 5px white);
         filter: drop-shadow(0px 1px 5px white);
     }
     76% { 
+        -webkit-filter: drop-shadow(0px 0px 5px white);
         filter: drop-shadow(0px 0px 5px white);
     }
     100% { 
+        -webkit-filter: drop-shadow(1px 1px 3px white);
         filter: drop-shadow(1px 1px 3px white);
     }
 }
 
-
-#airi-header-logo #text-script #ink-script,
 #airi-header-logo #text-script #airi-script {
-    animation: offset 3s 1s ease forwards, flash 2s 5s linear 6 alternate-reverse both;
+    animation: offset 3s 1s ease forwards, flash 2s 5s linear 6 alternate both;
+}
+
+#airi-header-logo #text-script #ink-script {
+    animation: offset 3s 1.7s ease forwards, flash 2s 5s linear 7 alternate both;
+}
+
+/*
+#airi-header-logo:hover #middle-finger {
+    transform: rotate(-5deg);
+    transition: 0.1s;
+    transform-origin: 70% 30%;
+}
+
+#airi-header-logo:hover #ring-finger {
+    transform: translateX(-1px) rotate(-5deg);
+    transition: 0.2s;
+    transform-origin: 60% 30%;
+}
+
+#airi-header-logo:hover #little-finger {
+    transform: translateX(-1px) rotate(3deg);
+    transition: 0.1s;
+    transform-origin: 60% 30%;
+}*/
+
+#airi-header-logo:hover #text-script #airi-script,
+#airi-header-logo:hover #text-script #ink-script {
+    animation: offset none, flash 1s linear infinite alternate-reverse both;
+    stroke-dashoffset: 0px;
+}
+
+#airi-header-logo #reaching {
+    transition: 0.5s;
 }
 
 @media (min-width: 600px) {

@@ -164,6 +164,7 @@ a {
     background-position-y: 1em;
     background-repeat: no-repeat;
     color: var(--light-color);
+    display: inline-block;
     padding-left: 0.2em;
     padding-top: 0.2em;
     padding-bottom: 0.1em;

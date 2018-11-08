@@ -6,6 +6,7 @@
 
 nav[id*="screen-home-nav"] {
     color: var(--light-color);
+    filter: -webkit-drop-shadow(1px 1px 3px black);
     filter: drop-shadow(1px 1px 3px black);
     font-size: 1.4rem;
     font-style: italic;
