@@ -1,0 +1,25 @@
+/**
+ * footer.css
+ * Project: Aether
+ * Airi Ink
+ */
+
+footer {
+    background-color: var(--cool-color-light60);
+    background-image: var(--brand-gradient);
+    box-sizing: border-box;
+    min-height: 10vh;
+    padding: 2em;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+footer details {
+    cursor: pointer;
+    display: block;
+    margin-top: 1rem;
+    position: sticky;
+    position: -webkit-sticky;
+    top: calc(50vh - 1em);
+}

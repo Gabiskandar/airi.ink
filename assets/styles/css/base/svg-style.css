@@ -1,0 +1,35 @@
+[class^="airi-"], [class*=" airi-"] {
+  display: inline-block;
+  width: auto;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.airi-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.airi-top-crease,
+.airi-bottom-crease  {
+  fill: black;
+  height: auto;
+  width: 100vw;
+}
+
+.airi-top-crease {
+  bottom: 0;
+  position: absolute;
+}
+
+#airi-hand-pull {
+  height: auto;
+  right: 0;
+  width: 100%;
+}
+
+.airi-spinner {
+  width: 3em;
+  transform: rotate(90deg);
+}

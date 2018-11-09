@@ -1,0 +1,222 @@
+/**
+ * base.css
+ * Project: Aether
+ * Airi Ink
+ */
+
+:root {
+    --light-color: rgba(255,255,255,1);
+    --key-color: rgba(10,10,12,1);
+    --background-color: rgb(30, 27, 35);
+    --warm-brand-color: rgba(255,38,0,1);
+    --warm-color-light60: rgba(255,82,51,1);
+    --warm-color-light80: rgba(255,168,153,1);
+    --warm-color-light90: rgba(255,212,204,1);
+    --cool-brand-color: rgba(38,0,255,1);
+    --cool-color-light60: rgba(82,51,255,1);
+    --cool-color-light70: rgba(125,102,255,1);
+    --cool-color-light90: rgba(212,204,255,1);
+    --neutral-brand-color: rgba(16,13,32,1);
+    --neutral-color-light60: rgba(40,35,67,1);
+    --neutral-color-light80: rgba(196,193,215,1);
+    --neutral-color-light96: rgba(243,243,247,1);
+    --grid-line: rgba(243,243,247,0.1);
+    --brand-gradient: linear-gradient(to right, var(--cool-color-light60), var(--warm-color-light80));
+}
+
+html {
+    font-size: 12px;
+}
+
+html * {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    background-color: #1E1B23;
+    color: var(--neutral-color-light96);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-feature-settings: "liga" on;
+    font-style: normal;
+    font-variant-ligatures: common-ligatures;
+    font-weight: 400;
+    line-height: 1.45;
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: grayscale;
+
+    /* w3C */
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1, "dlig" 1;
+
+    /* prefixes */
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "liga" 1, "dlig" 1;
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga" 1, "dlig" 1;
+    -o-font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+/* Small screens typography scale Perfect Fourth */
+
+    h1, h2, h3, h4 {
+        margin: 1.414em 0 0.5em;
+        line-height: 1.2;
+      }
+      
+    h1 {
+        font-size: 3.157em;
+    }
+      
+    h2 {
+        font-family: serif;
+        font-size: 1.777em;
+    }
+      
+    h3 {
+        font-family: serif;
+        font-size: 1.777em;
+        font-weight: 700;
+    }
+    
+    p h3 {
+        display: inline;
+    }
+
+    h4 {
+        font-size: 1.333em;
+    }
+    
+    small, 
+    .font_small {
+        font-size: 0.75em;
+    }
+
+@media (min-width: 480px) {
+    /* Small-Med screens typograhy scale Augmented Fourth */
+
+    p {margin-bottom: 1.3em;}
+
+    h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    }
+
+    h1 {
+    font-size: 3.998em;
+    }
+
+    h2,
+    h3 {font-size: 1.999em;}
+
+    h4 {font-size: 1.414em;}
+
+    small, .font_small {font-size: 0.707em;}
+}
+
+@media (min-width: 767px) {
+    /* Med-Large screens typography scale Perfect Fifth */
+
+    p {margin-bottom: 1.3em;}
+
+    h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    }
+
+    h1 {
+    font-size: 5.063em;
+    }
+
+    h2,
+    h3 {font-size: 2.25em;}
+
+    h4 {font-size: 1.5em;}
+
+    small, .font_small {font-size: 0.667em;}
+}
+
+@media (min-width: 1024px) {
+    /* Large screens typography scale Golden Ratio */
+
+    h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    }
+
+    h1 {
+    margin-top: 0;
+    font-size: 6.854em;
+    }
+
+    h2,
+    h3 {font-size: 2.618em;}
+
+    h4 {font-size: 1.618em;}
+
+    small, .font_small {font-size: 0.618em;}
+
+}
+
+a {
+    background-image: linear-gradient(transparent 0%,var(--cool-brand-color) 0%);
+    background-position-y: 1em;
+    background-repeat: no-repeat;
+    color: var(--light-color);
+    display: inline-block;
+    padding-left: 0.2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    padding-right: 0.1em;
+    position: relative;
+    text-decoration: none;
+    transition: background-position 0.2s;
+    z-index: 1;
+}
+
+a:hover,
+a:focus {
+    background-position-y: 0;
+    transition: background-position 0.2s;
+}
+
+a:active {
+    background-position-y: -0.2em;
+    transition: background-position 0.2s;
+}
+
+a:visited {
+    background-position-y: 0.2em;
+    transition: background-position 0.2s;
+}
+
+a:after {
+    content: "※";
+    padding-left: 0.1em;
+    position: inherit;
+    top: -0.5rem;
+}
+
+a:hover::after {
+    color: inherit;
+    transition: color 0.2s;
+}
+
+a:focus::after {
+    color: inherit;
+    transition: font-size 0.2s;
+}
+
+blockquote {
+    color: var(--primary-highlight-color);
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 2em 2em 2em 0;
+}
+
+blockquote span {
+    font-size: 1em;
+    text-transform: none;
+}

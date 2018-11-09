@@ -1,0 +1,330 @@
+/**
+ * main.css
+ * Project: Aether
+ * Airi Ink
+ */
+
+:root {
+    --div-detail-span: span 6;
+    --aside-span: span 6;
+}
+
+
+main {
+    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.center {
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-height: 100vh;
+    width: 100vw;
+}
+
+section.center div {
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;   
+}
+
+.highlight-detail .pull {
+    background-color: transparent;
+    height: auto;
+    margin-top: 100vh;
+}
+
+.highlight-detail .pull,
+.highlight-detail .drop {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 0;
+    min-height: auto;
+    padding: 0;
+    position: relative;
+}
+
+.highlight-detail .drop {
+    height: auto;
+    margin-bottom: -7.5vw;
+    min-height: unset;
+    position: absolute;
+    z-index: 1;
+}
+
+.drop::before {
+    content: "";
+    height: 8em;
+    width: 100%;
+    background-image: linear-gradient(transparent, black 40%);
+    position: absolute;
+    top: -8em;
+}
+
+.pull::after {
+    bottom: -4em;
+    content: "";
+    height: 4em;
+    width: 100%;
+    background-image: linear-gradient(black 80%, transparent);
+    position: absolute;
+}
+
+/*
+.pull svg,
+.drop svg {
+    filter: -webkit-drop-shadow(4px 4px 2px rgba(0,0,0,0.4));
+    filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.4));
+}*/
+
+.pull + div#design {
+    margin-top: 2em;
+    padding-top: 4em;
+}
+
+.light {
+    background-color: rgba(255,255,255,1);
+    background-color: var(--neutral-color-light96);
+    color: rgba(16,13,32,1);
+    color: var(--neutral-brand-color);
+}
+
+main > section {
+    color: rgba(255,255,255,1);
+    color: var(--light-color);
+}
+
+.highlight-detail > div {
+    background-color: black;
+    height: 100vh;
+}
+
+section.love-highlight {
+    background-color: var(--cool-color-light60);
+    animation: color-change 5s infinite alternate-reverse;
+    height: 100vh;
+    margin-top: -2em;
+}
+
+.love-highlight > div {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 45%;
+    width: 100vw;
+}
+
+.ligatures-on {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#about-airi > div,
+.highlight-detail > div {
+    display: flex;
+    display: webkit-flex;
+    align-content: center;
+    -webkit-align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding: 2em;
+    width: 100vw;
+}
+
+.highlight-detail > div {
+    grid-template-rows: 4em repeat(4, minmax(0, 1fr)) 4em;
+}
+
+#about-airi > div h3 {
+    display: none;
+}
+
+#about-airi h3 {
+    font-size: 1em;
+}
+
+#about-airi strong {
+    font-family: serif;
+    font-size: 1.777em;
+}
+
+.highlight-detail div aside {
+    margin-top: 2em;
+}
+
+.grid-8 {
+    background-attachment: fixed;
+    background-image: linear-gradient(to right, var(--grid-line) 0%, transparent 0.1%, transparent 12.5%, var(--grid-line) 12.5%, transparent 12.6%, transparent 25%, var(--grid-line) 25%, transparent 25.1%, transparent 37.5%, var(--grid-line) 37.5%, transparent 37.6%, transparent 50%, var(--grid-line) 50%, transparent 50.1%, transparent 62.5%, var(--grid-line) 62.5%, transparent 62.6%, transparent 75%, var(--grid-line) 75%, transparent 75.1%, transparent 87.5%, var(--grid-line) 87.5%, transparent 87.6%, transparent 100%), linear-gradient(var(--grid-line) 0%, transparent 0.1%, transparent 12.5%, var(--grid-line) 12.5%, transparent 12.6%, transparent 25%, var(--grid-line) 25%, transparent 25.1%, transparent 37.5%, var(--grid-line) 37.5%, transparent 37.6%, transparent 50%, var(--grid-line) 50%, transparent 50.1%, transparent 62.5%, var(--grid-line) 62.5%, transparent 62.6%, transparent 75%, var(--grid-line) 75%, transparent 75.1%, transparent 87.5%, var(--grid-line) 87.5%, transparent 87.6%, transparent 100%);
+    background-position-x: 5rem;
+    background-size: calc(100vw - 10em);
+}
+
+.grid-6 {
+    background-attachment: fixed;
+    background-image: linear-gradient(to right, transparent 0%, transparent 16.7%, var(--grid-line) 16.7%, transparent 16.8%, transparent 33.3%, var(--grid-line) 33.3%, transparent 33.4%, transparent 50%, var(--grid-line) 50%, transparent 50.1%, transparent 66.7%, var(--grid-line) 66.7%, transparent 66.8%, transparent 83.3%, var(--grid-line) 83.3%, transparent 83.4%, transparent 100%), linear-gradient( transparent 0%, transparent 16.7%, var(--grid-line) 16.7%, transparent 16.8%, transparent 33.3%, var(--grid-line) 33.3%, transparent 33.4%, transparent 50%, var(--grid-line) 50%, transparent 50.1%, transparent 66.7%, var(--grid-line) 66.7%, transparent 66.8%, transparent 83.3%, var(--grid-line) 83.3%, transparent 83.4%, transparent 100%);
+    background-position-x: 5rem;
+    background-size: calc(100vw - 10em);
+}
+
+#cropped-airi-hand-pull {
+    display: block;
+    z-index: 10;
+}
+
+#airi-hand-pull {
+    display: none;
+}
+
+@keyframes color-change {
+    0% {
+        background-color: var(--cool-color-light60)
+    }
+    100% {
+        background-color: var(--warm-color-light80)
+    }
+}
+
+@media (min-width: 480px) { 
+    
+    #about-airi strong {
+        font-size: 1.999em;
+    }
+}
+
+@media (min-width: 600px) { 
+
+    :root {
+        --div-detail-span: span 3;
+        --aside-span: span 2;
+    }
+
+    #about-airi > div h3 {
+        display: block;
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-gap: 1em;
+        justify-self: flex-end;
+        margin: 0;
+        text-align: end;
+        transform: scale(-1);
+        writing-mode: vertical-lr;
+    }
+
+    #about-airi > div,
+    .highlight-detail > div {
+        align-content: unset;
+        -webkit-align-content: unset;
+        display: grid;
+        grid-template-columns: 4em 1fr 1fr 1fr 1fr 1fr 1fr 4em;
+        grid-template-rows: 4em 1fr 1fr 1fr 1fr 4em;
+        grid-gap: 1em;
+        height: 100vh;
+        justify-content: unset;
+        -webkit-justify-content: unset;
+        padding: 0;
+    }
+
+    #about-airi > div > div {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 3;
+        grid-column-end: 7;
+    }
+    
+    #about-airi > div > aside {
+        grid-row-start: 5;
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+
+    aside::before {
+        width: calc(100% - 2em);
+        height: 0.5em;
+        content: "";
+        background-color: white;
+        position: absolute;
+        top: -1em;
+    }
+
+    .highlight-detail .pull {
+        margin-top: 100vh;
+    }
+
+    .highlight-detail > div:nth-of-type(2) > div {
+        align-self: end;
+        grid-column: 4 / var(--div-detail-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(2) > aside {
+        align-self: start;
+        grid-column: 2 / var(--aside-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(3) > div {
+        align-self: end;
+        grid-column: 3 / var(--div-detail-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(3) > aside {
+        align-self: start;
+        grid-column: 3 / var(--aside-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(4) > div {
+        align-self: start;
+        grid-column: 3 / var(--div-detail-span);
+        grid-row-start: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(4) > aside {
+        align-self: end;
+        grid-column: 5 / var(--aside-span);
+        grid-row-end: 4;
+    }
+    
+    .highlight-detail > div:nth-of-type(5) > div,
+    .highlight-detail > div:nth-of-type(6) > div {
+        align-self: center;
+        grid-column: 4 / var(--div-detail-span);
+        grid-row: 3 / var(--aside-span);
+    }
+
+    #cropped-airi-hand-pull {
+        display: none;
+    }
+
+    #airi-hand-pull {
+        display: block;
+    }
+}
+
+div > h2,
+.highlight-detail h3 {
+    line-height: 1.45;
+    margin-top: 0;
+}
+

@@ -1,0 +1,154 @@
+/**
+ * nav.css
+ * Project: Aether
+ * Airi Ink
+ */
+
+nav[id*="screen-home-nav"] {
+    color: var(--light-color);
+    filter: -webkit-drop-shadow(1px 1px 3px black);
+    filter: drop-shadow(1px 1px 3px black);
+    font-size: 1.4rem;
+    font-style: italic;
+    left: 0;
+    margin: 1em;
+    position: fixed;
+    top: 0;
+}
+
+nav a,
+nav a:hover,
+nav a:focus,
+nav a:active,
+nav a:visited {
+    background-image: none;
+    padding: 0;
+}
+
+nav a::before {
+    background-color: var(--cool-brand-color);
+    bottom: -0.2em;
+    box-sizing: border-box;
+    content: "";
+    height: 0%;
+    left: -0.2em;
+    padding: 0 0.2em;
+    position: absolute;
+    transition: 0.2s;
+    width: 100%;
+    z-index: -1;
+}
+
+nav a:hover::before {
+    height: 50%;
+    transition: 0.2s;
+}
+
+
+nav a:active::before,
+nav a:focus::before {
+    height: 100%;
+    transform: rotate(-15deg);
+    transition: 0.2s;
+}
+
+nav a:visited::before {
+    height: 100%;
+    transform: rotate(-15deg);
+}
+
+a:visited::after {
+    color: var(--cool-color-light70);
+}
+
+nav a:after {
+    color: var(--cool-brand-color);
+    content: "※";
+    padding-left: 0.1em;
+    position: inherit;
+    top: -0.5rem;
+}
+
+nav a:hover::after,
+a:hover:visited::after {
+    color: var(--light-color);
+    transition: color 0.2s;
+}
+
+nav[id*="screen-home-nav"] p {
+    margin: 0;
+}
+
+nav.sidebar {
+    display: none;
+}
+
+nav#small-screen-home-nav {
+    position: relative;
+}
+
+#small-screen-home-nav p {
+    line-height: 1.7;
+}
+
+#large-screen-home-nav {
+    display: none;
+}
+
+@media (min-width: 600px) { 
+
+    #small-screen-home-nav {
+        display: none;
+    }
+
+    #large-screen-home-nav {
+        display: block;
+    }
+
+    body > nav.sidebar {
+        display: block;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100vh;
+        z-index: 2;
+    }
+
+    nav.sidebar > ul {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        font-size: 1.2em;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0.5em 1em 0.5em 1em;
+        text-transform: lowercase;
+    }
+
+    nav.sidebar li {
+        align-items: center;
+        -webkit-align-items: center;
+        display: flex;
+    }
+
+    nav.sidebar p {
+        margin: 0;
+    }
+
+    /* rotate nav */
+
+    nav.sidebar {
+        transform: rotate(-90deg) translate(-0%, -100vh);
+        transform-origin: top right;
+        width: 100vh;
+    }
+
+    nav[id*="screen-home-nav"] {
+        left: 5rem;
+        margin: 0;
+        top: 2rem;
+        width: unset;
+    }
+}
